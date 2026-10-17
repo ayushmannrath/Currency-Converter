@@ -1,0 +1,240 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --accent: #14b8a6;
+  --background: #eef2ff;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #eef2ff, #e0f2fe, #f0fdfa);
+}
+
+/* Main card */
+.container {
+  width: 100%;
+  max-width: 440px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(51, 65, 85, 0.12);
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  text-align: center;
+}
+
+form {
+  margin-top: 30px;
+}
+
+.amount p,
+.from p,
+.to p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Amount input */
+form input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  background: #f8fafc;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Currency dropdowns */
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.from,
+.to {
+  flex: 1;
+  min-width: 0;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.select-container:focus-within {
+  border-color: var(--primary);
+}
+
+.select-container img {
+  width: 28px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.select-container select {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Swap icon */
+.dropdown > i {
+  flex-shrink: 0;
+  margin-top: 24px;
+  padding: 11px;
+  border: 1px solid #c7d2fe;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* Exchange result */
+.msg {
+  margin: 28px 0 20px;
+  padding: 16px;
+  border: 1px solid #ccfbf1;
+  border-radius: 12px;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Convert button */
+form button {
+  width: 100%;
+  min-height: 54px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.2);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.25);
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
+form button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* Mobile responsive */
+@media (max-width: 400px) {
+  body {
+    padding: 14px;
+  }
+
+  .container {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .dropdown {
+    gap: 8px;
+  }
+
+  .dropdown > i {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 9px;
+  }
+
+  .select-container {
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .select-container img {
+    width: 23px;
+    height: 17px;
+  }
+
+  .select-container select {
+    font-size: 0.82rem;
+  }
+}
